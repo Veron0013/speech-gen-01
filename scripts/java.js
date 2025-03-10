@@ -1,10 +1,23 @@
 
 var btnOpen = document.getElementById("open_btn");
-myModalForm = document.getElementById("add_form");
+var myModalForm = document.getElementById("add_form");
+
+function scrollToContainer() {
+	var MySlide = myModalForm.classList.contains("is-open") ? myModalForm : document.body;
+
+	setTimeout(() => {
+		MySlide.scrollIntoView({ behavior: "smooth", block: "start" });
+	}, 300);
+}
 
 function toggleClass(objForm) {
 	return function () {
+		console.log("++smooth++");
 		objForm.classList.toggle("is-open");
+
+		//if (objForm.classList.contains("is-open")) {
+		scrollToContainer();
+		//}
 	};
 }
 
