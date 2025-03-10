@@ -140,6 +140,8 @@ button {
 .content {
 	/*background-color: #fff;*/
 	padding: 80px 0;
+
+
 }
 
 .content .container {
@@ -147,6 +149,23 @@ button {
 	flex-direction: column;
 	align-items: center;
 	gap: 40px;
+
+	position: relative;
+	transition: transform 500ms ease-in-out;
+	transform: translate(0%, 0%);
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.content .container.is-open {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.content .container:not(.is-open) {
+	transform: translateY(-130%);
 }
 
 .content-title {}
