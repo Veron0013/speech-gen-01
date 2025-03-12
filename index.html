@@ -41,7 +41,7 @@
 			<!--<svg width="1440" height="700" viewBox="0 0 1440 700" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M0 0H1440V102.489L1347.5 552.104L0 700V102.489V0Z" fill="#475569" />
 			</svg>-->
-			<div class="container">
+			<div class="container is-open">
 				<div class="info-block">
 					<h1 class="inf-title">Апп для лінивих</h1>
 					<p class="info-text">
@@ -62,10 +62,37 @@
 					<input type="number" name="" class="content-input" placeholder="Кількість циклів" />
 				</label>
 				<ul class="content-list">
-					<li><textarea name="en_text" id="en_text" class="content-text-area" placeholder="En text"></textarea></li>
-					<li><textarea name="ua_text" id="ua_text" class="content-text-area" placeholder="Ua text"></textarea></li>
+					<li>
+						<div class="content-en-block">
+							<label for="en_voices" class="content-label"
+								>Голос (1)<select class="content-select" name="en_voices" id="en_voices"></select
+							></label>
+						</div>
+						<textarea
+							name="en_text"
+							id="en_text"
+							class="content-text-area"
+							placeholder="Some text"
+							rows="12"
+						></textarea>
+					</li>
+					<li>
+						<div class="content-en-block">
+							<label for="en_voices" class="content-label"
+								>Голос (2)<select class="content-select" name="ua_voices" id="ua_voices"></select
+							></label>
+						</div>
+						<textarea
+							name="ua_text"
+							id="ua_text"
+							class="content-text-area"
+							placeholder="Some text"
+							rows="12"
+						></textarea>
+					</li>
 				</ul>
-				<button type="button" class="info-btn">Jprd</button>
+				<button type="submit" class="info-btn" id="speak_scuko">Jprd</button>
+				<button type="submit" class="info-btn" id="stop_speak_scuko">Jprd Stop</button>
 			</div>
 		</section>
 		<script src="./scripts/java.js"></script>
