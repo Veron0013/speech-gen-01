@@ -65,6 +65,7 @@ const getVoicesArray = async () => {
 
 function speak_activate() {
 	return async function () {
+		const fieldCount = document.getElementById("input_count").value;
 		const fieldEnglish = document.getElementById("en_text").value;
 		const fieldUA = document.getElementById("ua_text").value;
 
@@ -75,15 +76,21 @@ function speak_activate() {
 			return;
 		}
 
+		if (!fieldCount || fieldCount <= 0) {
+			return;
+		}
+
 		const En_speakVoice = voices[en_voice.value];
 		const Ua_speakVoice = voices[ua_voice.value];
 
-		for (let i = 0; i < txtEnglish.length; i++) {
-			// Чекаємо, поки текст прочитається
-			await speak_scuko(txtEnglish[i], En_speakVoice);
+		for (let a = 0; a <= fieldCount; a++) {
+			for (let i = 0; i < txtEnglish.length; i++) {
+				// Чекаємо, поки текст прочитається
+				await speak_scuko(txtEnglish[i], En_speakVoice);
 
-			if (i < txtUA.length) {
-				await speak_scuko(txtUA[i], Ua_speakVoice);
+				if (i < txtUA.length) {
+					await speak_scuko(txtUA[i], Ua_speakVoice);
+				}
 			}
 		}
 	}
